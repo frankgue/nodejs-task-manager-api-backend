@@ -3,7 +3,9 @@ const validator = require("validator");
 const Task = require("./Task");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+require("dotenv").config({
+  path: ".test.env",
+});
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -68,7 +70,7 @@ userSchema.virtual("tasks", {
 
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
-  const token = await jwt.sign({ _id: user._id }, "thisIsMySecret", {
+  const token = await jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
     expiresIn: "7 days",
   });
 
