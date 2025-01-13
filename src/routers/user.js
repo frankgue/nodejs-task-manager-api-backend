@@ -5,7 +5,7 @@ const auth = require("../middleware/auth");
 const multer = require("multer");
 const sharp = require("sharp");
 
-const { sendWelcomeEmail, sendCancellingEmail } = require("../email/account");
+// const { sendWelcomeEmail, sendCancellingEmail } = require("../email/account");
 
 router.post("/users/login", async (req, res) => {
   try {
