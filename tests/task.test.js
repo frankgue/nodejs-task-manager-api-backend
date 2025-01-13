@@ -8,6 +8,8 @@ const {
   userTwo,
   userTwoId,
   taskOne,
+  taskTwo,
+  taskThree,
 } = require("./fixtures/db");
 
 beforeEach(setupDatabase);
